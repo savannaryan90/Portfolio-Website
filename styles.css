@@ -2,190 +2,624 @@
 Name: Savanna Ryan
 Date: 06/19/2026
 Filename: styles.css
-Student Portfolio Website CSS styles and responsive design
+Student Portfolio Website CSS Styles
 */
 
-/* CSS Reset */
 
-html, body, header, nav, main, footer, div, img, h1, h2, h3, p, ul, li, form, table, th, td {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Universal box sizing */
+/* =========================
+   CSS RESET
+========================= */
 
 * {
     box-sizing: border-box;
 }
 
-/* Body Styles */
+
+html,
+body,
+header,
+nav,
+main,
+footer,
+section,
+div,
+img,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+form,
+table,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   COLOR VARIABLES
+========================= */
+
+:root {
+
+    --primary: #0F766E;
+    --secondary: #2563EB;
+    --accent: #F97316;
+
+    --background: #F8FAFC;
+    --card: #FFFFFF;
+
+    --text: #334155;
+    --light-border: #CBD5E1;
+
+}
+
+
+/* =========================
+   BODY
+========================= */
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f5f5;
-    color: #222222;
-    line-height: 1.6;
+
+    font-family: "Open Sans", Arial, sans-serif;
+
+    background-color: var(--background);
+
+    color: var(--text);
+
+    line-height: 1.7;
+
 }
 
-/* Header Styles */
+
+/* =========================
+   HEADER
+========================= */
 
 header {
-    background-color: navy;
-    color: white;
-    padding: 25px;
-    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #0F766E,
+        #2563EB
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px 20px;
+
 }
 
-/* Navigation Styles */
+
+header h1 {
+
+    font-size:3rem;
+
+    margin-bottom:10px;
+
+}
+
+
+header p {
+
+    font-size:1.2rem;
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
 
 nav {
-    background-color: #dddddd;
-    padding: 15px;
-    text-align: center;
+
+    background:white;
+
+    padding:18px;
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,.08);
+
 }
+
+
+nav ul {
+
+    list-style:none;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
 
 nav a {
-    color: navy;
-    text-decoration: none;
-    margin: 10px;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    font-weight:600;
+
+    padding:10px 18px;
+
+    border-radius:25px;
+
+    transition:.3s;
+
 }
 
-nav a:hover {
-    text-decoration: underline;
+
+nav a:hover,
+nav a.active {
+
+    background:var(--secondary);
+
+    color:white;
+
 }
 
 
-/* Main Content */
+/* =========================
+   MAIN CONTENT
+========================= */
 
 main {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:30px 0;
+
 }
 
 
-/* Heading Styles */
+/* =========================
+   SECTIONS / CARDS
+========================= */
 
-h1, h2, h3 {
-    margin-bottom: 15px;
+section,
+#welcome,
+#college,
+#projects,
+#contact,
+#hobbies {
+
+    background:var(--card);
+
+    padding:30px;
+
+    margin:30px 0;
+
+    border-radius:15px;
+
+    box-shadow:
+
+    0 8px 20px rgba(0,0,0,.08);
+
+    animation:fadeIn .8s ease;
+
 }
 
 
-/* Div Styles */
+section:hover {
 
-div {
-    margin-bottom: 20px;
+    transform:translateY(-3px);
+
+    transition:.3s;
+
 }
 
 
-/* Responsive Images */
+/* =========================
+   HEADINGS
+========================= */
+
+h1,
+h2,
+h3 {
+
+    margin-bottom:15px;
+
+}
+
+
+h2 {
+
+    color:var(--primary);
+
+}
+
+
+h3 {
+
+    color:var(--secondary);
+
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+
+    color:var(--secondary);
+
+}
+
+
+a:hover {
+
+    color:var(--accent);
+
+}
+
+
+/* =========================
+   IMAGES
+========================= */
 
 img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+
+    display:block;
+
+    max-width:100%;
+
 }
 
 
-/* Welcome Section */
+.profile-photo {
 
-#welcome {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    text-align:center;
+
 }
 
 
-/* Grid Layout */
+.profile-photo img {
+
+    width:230px;
+
+    height:230px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:
+
+    6px solid var(--accent);
+
+    margin:auto;
+
+}
+
+
+/* =========================
+   GRID LAYOUT
+========================= */
+
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+
 }
 
 
-.grid div {
-    background-color: #eeeeee;
-    padding: 20px;
-    border: 2px solid #333333;
+.project-card {
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    border-left:
+
+    6px solid var(--secondary);
+
 }
 
 
-/* Table Styles */
+/* =========================
+   LISTS
+========================= */
+
+
+ul {
+
+    padding-left:25px;
+
+}
+
+
+li {
+
+    margin-bottom:10px;
+
+}
+
+
+/* =========================
+   TABLES
+========================= */
+
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
 
+    width:100%;
 
-th, td {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+    overflow:hidden;
+
 }
 
 
 th {
-    background-color: navy;
-    color: white;
+
+    background:var(--primary);
+
+    color:white;
+
 }
 
 
-/* Form Styles */
+th,
+td {
+
+    padding:12px;
+
+    border:1px solid var(--light-border);
+
+    text-align:center;
+
+}
+
+
+tr:nth-child(even){
+
+    background:#F1F5F9;
+
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
 
 form {
-    width: 80%;
-    margin: auto;
+
+    max-width:700px;
+
+    margin:auto;
+
 }
 
 
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #555555;
+label {
+
+    display:block;
+
+    font-weight:bold;
+
+    margin-top:15px;
+
 }
 
+
+input,
+select,
+textarea {
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:8px;
+
+    border:
+
+    1px solid var(--light-border);
+
+    border-radius:8px;
+
+    font-family:inherit;
+
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    outline:none;
+
+    border-color:var(--secondary);
+
+}
+
+
+/* Submit Button */
 
 input[type="submit"] {
-    width: 120px;
-    background-color: navy;
-    color: white;
-    cursor: pointer;
+
+    width:auto;
+
+    background:var(--accent);
+
+    color:white;
+
+    border:none;
+
+    padding:14px 30px;
+
+    margin-top:20px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
 }
 
 
-/* Footer Styles */
+input[type="submit"]:hover {
+
+    background:var(--primary);
+
+}
+
+
+/* =========================
+   RESUME EMBED
+========================= */
+
+iframe {
+
+    border-radius:12px;
+
+    border:none;
+
+}
+
+
+/* =========================
+   BADGES
+========================= */
+
+
+.badge {
+
+    display:inline-block;
+
+    background:#DBEAFE;
+
+    color:#1D4ED8;
+
+    padding:8px 15px;
+
+    margin:5px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 
 footer {
-    background-color: navy;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+
+    background:#E2E8F0;
+
+    color:var(--text);
+
+    text-align:center;
+
+    padding:25px;
+
+    margin-top:40px;
+
 }
 
 
-/* Responsive Design */
+/* =========================
+   ANIMATION
+========================= */
 
-@media screen and (max-width: 600px) {
 
-    .grid {
-        grid-template-columns: 1fr;
+@keyframes fadeIn {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(25px);
+
     }
 
-    form {
-        width: 100%;
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
     }
 
-    nav a {
-        display: block;
-        margin: 5px;
-    }
+}
+
+
+/* =========================
+   MOBILE DESIGN
+========================= */
+
+
+@media screen and (max-width:700px){
+
+
+header h1 {
+
+    font-size:2rem;
+
+}
+
+
+nav ul {
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+main {
+
+    width:95%;
+
+}
+
+
+section {
+
+    padding:20px;
+
+}
+
+
+table {
+
+    font-size:.85rem;
+
+}
+
 
 }
